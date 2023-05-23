@@ -1,0 +1,101 @@
+@button-offset: 20px;
+
+.button {
+  .transition();
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 23px 30px;
+
+  font-size: 18px;
+  color: @red;
+  line-height: 1;
+  font-weight: 700;
+  text-decoration: none;
+
+  border: 1px solid @red;
+  background: none;
+  cursor: pointer;
+
+  &::after {
+    .transition();
+
+    position: absolute;
+    bottom: -5px;
+    left: @button-offset;
+
+    height: 5px;
+    width: calc(100% - @button-offset * 2);
+
+    background-color: @red;
+    transform-origin: 50% 0;
+    content: '';
+  }
+
+  &:hover,
+  &:focus {
+    color: @white;
+    background-color: @red;
+
+    &::after {
+      transform: scaleY(0);
+    }
+  }
+
+  &:focus {
+    outline: 1px dotted @blue;
+    outline-offset: 5px;
+  }
+
+  &:active {
+    color: @white;
+    background-color: @blue;
+    border-color: @blue;
+  }
+
+  &--white {
+    color: @white;
+    border-color: @white;
+
+    &::after {
+      background-color: @white;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: @white;
+      color: @red;
+    }
+
+    &:focus {
+      outline: 1px dotted @white;
+      outline-offset: 5px;
+    }
+
+    &:active {
+      color: @blue;
+      border-color: @white;
+    }
+  }
+
+  &:disabled {
+    opacity: @disabled-opacity;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: @break-point-0) {
+  .button {
+    font-size: 16px;
+    padding: 18px 25px;
+  }
+}
+
+@media (max-width: @break-point-1) {
+  .button {
+    padding: 16px 20px;
+  }
+}

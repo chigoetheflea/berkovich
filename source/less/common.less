@@ -1,0 +1,82 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+
+  min-width: 360px;
+  min-height: 100vh;
+
+  font-family: "stl", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: @red;
+  text-rendering: optimizeLegibility;
+
+  background-color: #ffffff;
+
+  overflow-x: hidden;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+*::selection {
+  color: @white;
+  background-color: @red;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  .transition();
+
+  color: @red;
+
+  &:hover,
+  &:focus {
+    color: @blue;
+  }
+
+  &:focus {
+    outline: 1px dotted @blue;
+    outline-offset: 5px;
+  }
+
+  &:active {
+    color: @red-light;
+  }
+}
+
+button {
+  .transition();
+
+  &:focus {
+    outline: 1px dotted @red-light;
+    outline-offset: 3px;
+  }
+}
+
+em, i {
+  font-style: normal !important;
+}
+
+p:empty {
+  display: none !important;
+}
+
+@media (max-width: @break-point-0) {
+  body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

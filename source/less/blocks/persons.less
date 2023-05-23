@@ -1,0 +1,18 @@
+.persons__wrapper {
+  display: flex;
+  gap: 100px;
+  margin-top: 50px;
+}
+
+@media (max-width: @break-point-0) {
+  .persons__wrapper {
+    gap: 50px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: @break-point-2) {
+  .persons__wrapper {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,33 @@
+.contacts {
+  display: flex;
+}
+
+.contacts__icon {
+  .transition(svg);
+
+  flex-shrink: 0;
+  stroke: @red;
+  stroke-width: 1px;
+}
+
+.contacts__item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  text-decoration: none;
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    svg {
+      stroke: @blue;
+    }
+  }
+
+  &:active {
+    svg {
+      stroke: @red-light;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+.lawer-small {
+  display: flex;
+  gap: 60px;
+  flex-grow: 1;
+}
+
+.lawer-small__photo {
+  img {
+    max-width: 300px;
+  }
+}
+
+.lawer-small__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.lawer-small__job {
+  margin: 30px 0 0 0;
+  font-size: 24px;
+  line-height: 1;
+  font-family: 'prata', serif;
+}
+
+.lawer-small__contacts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  a {
+    align-self: flex-start;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.lawer-small__title {
+  font-size: 38px;
+  line-height: 1.25;
+}
+
+.lawer-small__button {
+  align-self: flex-start;
+  margin-top: 40px;
+}
+
+@media (max-width: @break-point-0) {
+  .lawer-small {
+    gap: 40px;
+  }
+}
+
+@media (max-width: @break-point-1) {
+  .lawer-small {
+    gap: 30px;
+  }
+
+  .lawer-small__job {
+    margin-top: 15px;
+    font-size: 22px;
+  }
+
+  .lawer-small__title {
+    font-size: 30px;
+  }
+
+  .lawer-small__contacts {
+    margin-top: 30px;
+  }
+
+  .lawer-small__photo {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: @break-point-2) {
+  .lawer-small {
+    flex-grow: 0;
+    gap: 100px;
+  }
+
+  .lawer-small__photo {
+    max-width: 400px;
+
+    img {
+      max-width: 400px;
+    }
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .lawer-small {
+    flex-grow: 0;
+    gap: 50px;
+  }
+
+  .lawer-small__photo {
+    max-width: 300px;
+
+    img {
+      max-width: 300px;
+    }
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .lawer-small {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .lawer-small__photo {
+    max-width: unset;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .lawer-small__contacts {
+    margin-top: 20px;
+  }
+
+  .lawer-small__button {
+    margin-top: 30px;
+    align-self: center;
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .lawer-small__title {
+    font-size: 26px;
+  }
+
+  .lawer-small__job {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,31 @@
+.text {
+  &--big {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &--bold {
+    font-weight: 900;
+  }
+
+  &--margin-bottom {
+    margin-bottom: 30px;
+  }
+
+  &--red {
+    color: @red;
+
+    a {
+      color: @red;
+
+      &:hover,
+      &:focus {
+        color: @red-light;
+      }
+
+      &:active {
+        color: @red-dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.list {
+  .list-style-none();
+
+  li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 5px;
+
+    &::before,
+    &::after {
+      position: absolute;
+
+      content: '';
+    }
+
+    &::before {
+      top: 8px;
+      left: 0;
+      width: 12px;
+      height: 12px;
+
+      border: 1px solid @red;
+    }
+
+    &::after {
+      top: 11px;
+      left: 3px;
+
+      width: 6px;
+      height: 4px;
+
+      border-left: 1px solid @red;
+      border-bottom: 1px solid @red;
+      transform: rotate(-45deg);
+    }
+  }
+}
+

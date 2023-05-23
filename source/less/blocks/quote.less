@@ -1,0 +1,83 @@
+.quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.quote__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.quote__text {
+  position: relative;
+  margin: 0;
+
+  font-family: 'prata', 'Times New Roman';
+  font-size: 36px;
+  line-height: 45px;
+  font-style: italic;
+
+  &::after,
+  &::before {
+    position: absolute;
+    top: 0;
+    width: 16px;
+    height: 12px;
+
+    background: url('../img/icon_quote.svg') 50% 50%;
+    content: '';
+  }
+
+  &::before {
+    left: -20px;
+  }
+
+  &::after {
+    right: -30px;
+    transform: rotate(180deg);
+  }
+}
+
+.quote__author {
+  margin: 15px 0 0 0;
+  font-weight: 700;
+}
+
+@media (max-width: @break-point-0) {
+  .quote__text {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: @break-point-2) {
+  .quote {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .quote__text {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  .quote__wrapper {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: @break-point-4) {
+  .quote {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+

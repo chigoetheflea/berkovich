@@ -1,0 +1,16 @@
+.columns-wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  &--center {
+    justify-content: center;
+  }
+}
+
+@media (max-width: @break-point-3) {
+  .columns-wrapper {
+    gap: 25px;
+  }
+}
