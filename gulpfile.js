@@ -135,7 +135,7 @@ gulp.task("themeBuild", function () {
   ], {
     base: "build"
   })
-  .pipe(gulp.dest("../theme/assets"));
+  .pipe(gulp.dest("../themes/berkovich/assets"));
 });
 
 gulp.task("server", function () {
