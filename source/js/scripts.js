@@ -299,6 +299,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     const fields = Array.from(form.querySelectorAll(FORM_INPUT));
     const resultField = form.querySelector(FORM_RESULT);
     const submitButton = form.querySelector(FORM_SUBMIT);
+    const formAgree = form.querySelector(FORM_AGREE);
     let fieldResetValue = FORM_FIELD_DEFAULT_VALUE;
 
     fields.map((field) => {
@@ -306,6 +307,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
     });
 
     submitButton.disabled = true;
+    formAgree.checked = false;
     resultField.classList.remove(FORM_RESULT_ACTIVE_CLASS);
   };
 
