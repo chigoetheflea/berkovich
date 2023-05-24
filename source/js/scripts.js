@@ -41,7 +41,7 @@ const FORM_RESULT_TIMEOUT = 2000;
 const FORM_ALERT_ERROR = `Ошибка отправки!`;
 const FORM_ALERT_SUCCESS = `Отправлено!`;
 const FORM_METHOD = `POST`;
-const FORM_SERVER_URL = (typeof phpHandler !== `undefined` ) ? phpHandler.url : `https://zinker.ru/wp-content/themes/zinker v3.0/lib/mail_handler.php`;
+const FORM_SERVER_URL = `https://n-bpartners.ru/lib/mail_handler.php`;
 const FORM_FIELD_DEFAULT_VALUE = ``;
 const FORM_SUBMIT = `.js-submit`;
 const FORM_AGREE = `.js-agree`;
@@ -302,35 +302,15 @@ document.addEventListener(`DOMContentLoaded`, function() {
     let fieldResetValue = FORM_FIELD_DEFAULT_VALUE;
 
     fields.map((field) => {
-      console.log(field);
-      if (field.classList.contains(SELECT_INPUT)) {
-        const selectButton = field.parentNode.querySelector(SELECT_BUTTON);
-        const selectList = field.parentNode.querySelector(`.${SELECT_CURRENT_OPTION_CLASS}`);
-        const selectDefaultValue = selectButton.dataset.default;
-
-        selectButton.querySelector(`span`).textContent = selectDefaultValue;
-        selectList.classList.remove(SELECT_CURRENT_OPTION_CLASS);
-
-        fieldResetValue = selectDefaultValue;
-      }
-
-      if (field.classList.contains(FILE_INPUT)) {
-        field.files = null;
-
-        const fileUpload = field.parentNode.querySelector(FILE_MARK);
-        fileUpload.textContent = fileUpload.dataset.default;
-      }
-
       field.value = fieldResetValue;
     });
 
     submitButton.disabled = true;
-
     resultField.classList.remove(FORM_RESULT_ACTIVE_CLASS);
   };
 
-  const displayXHRError = (form) => {
-    console.log(`sending error`);
+  const displayXHRError = (form, response) => {
+    console.log(`Sending error: ${response}`);
 
     const resultField = form.querySelector(FORM_RESULT);
     resultField.textContent = FORM_ALERT_ERROR;
@@ -360,7 +340,7 @@ document.addEventListener(`DOMContentLoaded`, function() {
         if (xhr.status === 200) {
           displayXHRSuccess(form);
         } else {
-          displayXHRError(form);
+          displayXHRError(form, xhr.response);
         }
       }
     };
