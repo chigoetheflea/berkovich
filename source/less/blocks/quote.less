@@ -15,6 +15,7 @@
 .quote__text {
   position: relative;
   margin: 0;
+  margin-right: -35px;
 
   font-family: 'prata', 'Times New Roman';
   font-size: 36px;
@@ -23,21 +24,25 @@
 
   &::after,
   &::before {
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -20px;
     width: 16px;
     height: 12px;
 
-    background: url('../img/icon_quote.svg') 50% 50%;
-    content: '';
+    color: transparent;
+    font-size: 16px;
+
+    background: url('../img/icon_quote.svg') 50% 50% no-repeat;
+    background-size: 16px 12px;
+    content: 'xxx';
   }
 
   &::before {
-    left: -20px;
+    margin-left: -20px;
   }
 
   &::after {
-    right: -30px;
+    margin-left: 10px;
     transform: rotate(180deg);
   }
 }
@@ -63,6 +68,8 @@
 
 @media (max-width: @break-point-tablet) {
   .quote__text {
+    margin: 0;
+
     &::after,
     &::before {
       display: none;

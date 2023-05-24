@@ -41,7 +41,7 @@ const FORM_RESULT_TIMEOUT = 2000;
 const FORM_ALERT_ERROR = `Ошибка отправки!`;
 const FORM_ALERT_SUCCESS = `Отправлено!`;
 const FORM_METHOD = `POST`;
-const FORM_SERVER_URL = `https://n-bpartners.ru/lib/mail_handler.php`;
+const FORM_SERVER_URL = (typeof phpHandler !== `undefined` ) ? phpHandler.url : `https://n-bpartners.ru/wp-content/themes/berkovich/lib/mail_handler.php`;
 const FORM_FIELD_DEFAULT_VALUE = ``;
 const FORM_SUBMIT = `.js-submit`;
 const FORM_AGREE = `.js-agree`;
